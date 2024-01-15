@@ -18,7 +18,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Slf4j
 @Configuration
 public class HelloJobConfig {
-    @StepScope
     @Bean
     public Job helloJob(JobRepository jobRepository, Step helloStep1) {
         return new JobBuilder("helloJob", jobRepository)
@@ -27,7 +26,7 @@ public class HelloJobConfig {
                 .build();
     }
 
-    @StepScope
+    @JobScope
     @Bean
     public Step helloStep1(JobRepository jobRepository, Tasklet helloStep1Tasklet, PlatformTransactionManager platformTransactionManager) {
         return new StepBuilder("helloStep1Tasklet", jobRepository)
