@@ -38,7 +38,7 @@ public class Hello2JobConfig {
     @Bean
     public Tasklet hello2Step1Tasklet() {
         return ((contribution, chunkContext) -> {
-            System.out.println("Hello World 2/1");
+            System.out.println("Hello World 2-1");
             return RepeatStatus.FINISHED;
         });
     }
@@ -55,7 +55,7 @@ public class Hello2JobConfig {
     @Bean
     public Tasklet hello2Step2Tasklet() {
         return ((contribution, chunkContext) -> {
-            System.out.println("Hello World 2/2");
+            System.out.println("Hello World 2-2");
             return RepeatStatus.FINISHED;
         });
     }
